@@ -11,3 +11,163 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.flip-card {
+  background-color: transparent;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  white-space: pre-wrap;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  /** Responsive layout **/
+  display: flex;
+  /** One element on top of the other **/
+  flex-direction: column;
+  background-image: linear-gradient(to bottom, rgba(64, 57, 57, 0.31), rgba(64, 57, 57, 0.31));
+
+  backdrop-filter: "blur(20px)";
+}
+
+.flip-card-back {
+  background-color: rgb(42, 106, 136);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.card-grid {
+  margin-top: 60vh;
+  margin-right: 65vh;
+  max-width: 1000px;
+  display: grid;
+  grid-gap: .5rem;
+  grid-template-columns: repeat(7, minmax(225px, 1fr));
+}
+
+.details {
+  font-size: '1vw';
+  font-weight: '15';
+}
+
+.day-temp-min-max {
+  font-size: '1vw';
+  font-weight: '300';
+}
+
+.day-weather-desc {
+  font-size: '1vw';
+}
+
+.day {
+  font-size: '1.2vw';
+  font-weight: '50';
+}
+
+.weather-card-m {
+  background-color: rgba(0, 0, 0, 0.5);
+  /** Responsive layout **/
+  display: flex;
+  /** One element on top of the other **/
+  flex-direction: column;
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+
+  backdrop-filter: "blur(10px)";
+
+  box-shadow: 10px 10px 10px rgba(30, 30, 30, 0.5);
+
+  margin: 500px 50px 75px 100px;
+}
+
+.city {
+  
+  font-size: 50px;
+  font-weight: '50';
+}
+
+.city-weather-desc {
+  font-size: 20px;
+}
+
+.current-weather {
+  position: absolute;
+  margin-right: 100px;
+}
+
+
+.current-weather-description {
+  margin-top: 20px;
+  position: relative;
+  width: 500px;
+  color: white
+}
+
+
+.city-label {
+  font-size: 15px;
+  font-weight: '15';
+}
+
+.city-value {
+  font-size: 15px;
+  font-weight: '15';
+}
+
+.city-temp {
+  font-size: 30px;
+  font-weight: '500';
+}
+
+.background-container {
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  /* Entire page width */
+  width: 100%;
+  /* Entire page height */
+  height: 100%;
+  /* Responsive layout */
+  display: flex;
+  /* Display on top of the other */
+  flex-direction: column;
+  /* Display horizontally at the center */
+  align-items: center;
+  /* Smooth transition to bottom right with different colors */
+  background-image: url('./img/background.jpg');
+  /* To cover the entire screen */
+  background-size: cover;
+  /* Image position */
+  background-position: center;
+  /* To not repeat the image beyond it's scale */
+  background-repeat: no-repeat;
+  box-shadow: (20px 30px 12px rgba(0, 0, 0, 0.25));
+}
